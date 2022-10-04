@@ -8,14 +8,19 @@
 #'@details
 #'The import function is a wrapper for the
 #'\href{https://haven.tidyverse.org/}{haven},
-#'\href{https://readxl.tidyverse.org/}{readxl}
+#'\href{https://readxl.tidyverse.org/}{readxl},
+#'\href{https://github.com/alexcb/rjson}{rjson},
 #'and \href{https://github.com/r-lib/vroom}{vroom} packages.
+#'
+#'@note
+#'Complex nested JSON files will not be imported properly.
 #'
 #'@seealso
 #'\link[haven]{read_sas},
 #'\link[haven]{read_dta},
 #'\link[haven]{read_spss},
 #'\link[readxl]{read_excel},
+#'\link[rjson]{fromJSON},
 #'\link[vroom]{vroom}
 #'
 #'@param file data file to import.
@@ -25,6 +30,7 @@
 #'@import readxl
 #'@import vroom
 #'@import tools
+#'@import rjson
 #'
 #'@export
 #'@return a data frame
@@ -72,6 +78,10 @@ import <- function(file, ...){
 
   else if(extension == "dta") {
     dataset <- haven::read_dta(file, ...)
+  }
+
+  else if(extension =="json"){
+    dataset <- as.data.frame(rjson::fromJSON(file, ...))
   }
 
   else {

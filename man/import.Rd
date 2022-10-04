@@ -22,8 +22,12 @@ statistical packages such as SAS, SPSS, and Stata.
 \details{
 The import function is a wrapper for the
 \href{https://haven.tidyverse.org/}{haven},
-\href{https://readxl.tidyverse.org/}{readxl}
+\href{https://readxl.tidyverse.org/}{readxl},
+\href{https://github.com/alexcb/rjson}{rjson},
 and \href{https://github.com/r-lib/vroom}{vroom} packages.
+}
+\note{
+Complex nested JSON files will not be imported properly.
 }
 \examples{
 \dontrun{
@@ -46,5 +50,6 @@ mydataframe <- import()
 \link[haven]{read_dta},
 \link[haven]{read_spss},
 \link[readxl]{read_excel},
+\link[rjson]{fromJSON},
 \link[vroom]{vroom}
 }
