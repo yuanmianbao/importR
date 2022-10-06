@@ -5,6 +5,8 @@
 #'delimited text files, EXCEL spreadsheet, and
 #'statistical packages such as SAS, SPSS, and Stata.
 #'
+#'This is wonderful.
+#'
 #'@details
 #'The import function is a wrapper for the
 #'\href{https://haven.tidyverse.org/}{haven},

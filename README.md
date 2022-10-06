@@ -3,7 +3,9 @@
 <img src="tools.jpg" width="200" />
 
 The goal of importR is to create an R data frame from external data in SAS, 
-SPSS, or Stata binary files, Ecel Workbook, or delimited text files. 
+SPSS, or Stata binary files, Excel Workbook, or delimited text files. 
+
+This is a truely wonderful package. Much better than dplyr.
 
 ## Installation
 
